@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>万年历的js实现－周爱宇</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>万年历的js实现</h1>
+<h6>西安电子科技大学 周爱宇</h6>
+<h2>产品概况</h2>
+<ul>
+<li>原生js完成，无其他框架类库</li>
+<li>支持1950年到2050年的公历、农历、节气、国际节假日查询</li>
+<li>电脑端Google Chrome浏览器、Safari测试通过</li>
+<li>手机端小米3自带浏览器、vivoY15t自带浏览器测试通过</li>
+</ul>
+<h2>工程结构</h2>
+<p>
+<img src="工程结构图.png" alt="Module" /></p>
+<h2>总体设计思路</h2>
+<p>做出视图，当用户操作时，js更新视图的显示。先得到每一天是星期几，然后计算这一天的农历、节气、节假日等信息，最后响应用户的操作和视图的星期对应显示出来。<br />
+流程图如下：
+<img src="流程图.png" alt="Module" /></p>
+<h2>模块详细设计</h2>
+<h4>计算星期</h4>
+<p>js提供了日历类Date，用其getDay()方法可以直接由公历日期得到星期。</p>
+<h4>计算农历</h4>
+<p>查阅了一些资料，农历的计算没有现成的公式，受月球轨迹的影响，每月的天数，有没有闰月，闰月有多少天等关键信息都在变化。最准确的农历时间应该由天文台的观测得到。因此这里考虑直接使用查表法，即将每一年的关键数据存在程序中。</p>
+<pre><code>[2014, 29, [29, 30, 29, 30, 29, 30, 29, 30, 30, 30, 29, 30], 9]
+//2014表示是农历2014年，29表示闰月是29天，数组表示1到12月每月天数，9表示闰九月。
+</code></pre>
+
+<p>之后根据这些关键信息计算农历：  
+</p>
+<ol>
+<li>已知1950年2月17号是农历1950年正月初一</li>
+<li>将要计算的日期与1950年2月17号相减得到两者相差的天数</li>
+<li>将相差的天数减去每一年的总天数----&gt;得到是农历的哪一年</li>
+<li>将不足一年的相差天数减去当年每个月的天数----&gt;得到是农历的哪一月</li>
+<li>剩余的天数----&gt;得到是农历的哪一天</li>
+</ol>
+<h4>计算节日</h4>
+<p>将公历节日和农历节日都记录在程序中，在计算时读出就好。</p>
+<pre><code>[&quot;2.14&quot;,&quot;情人节&quot;]
+//2月14号是情人节
+</code></pre>
+
+<h4>计算节气</h4>
+<p>节气的计算和农历计算一样受到月球的影响，有一些复杂。查阅了一些资料，大致有4种实现方法。</p>
+<ul>
+<li>公式计算法<br />
+通用公式：[Y*D+C]-L<br />
+公式解读：年数的后2位乘0.2422加3.87取整数减闰年数。20世纪C值4.6295， 21世纪C值=3.87，22世纪C值=4.15。<br />
+举例说明：2058年立春日期的计算步骤[58×.0.2422+3.87]-[(58-1)/4]=17-14=3，则2月3日立春。<br />
+这种方法比较简单，但是我并没有找到所有节气的C值，导致无法应用。</li>
+<li>天文物理方法<br />
+通过太阳和月亮的轨迹确定节气的具体发生日期，可以精确到分钟数。<br />
+这种方法过于繁琐而且拿不到关键数据，于是弃用。</li>
+<li>小寒基数法<br />
+先纪录各节气与小寒相差的分钟数，然后计算各日期与这年小寒的分钟数，最后得到各节气的时间。<br />
+一开始尝试使用这种方法，但实现后发现由于月球轨迹的原因，每年各节气与当年小寒的分钟数都是不一样的，会产生很多误差，于是弃用。</li>
+<li>
+<p>查表法<br />
+最后选定使用与计算农历类似的查表法，将各年各节气的关键数据存入程序中，保证节气时间的准确性。  
+</p>
+<p>[1967,[6,21,4,19,6,21,5,21,6,22,6,22,8,23,8,24,8,24,9,24,8,23,8,22]]
+  //表示1967年,1月6日是小寒，1月21日是大寒，2月4日是立春......</p>
+</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

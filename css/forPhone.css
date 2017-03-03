@@ -1,0 +1,211 @@
+/*公用*/
+.leftArea
+{
+    float : left;
+}
+
+.rightArea
+{
+    float : right;
+}
+
+.clear
+{
+    clear : both;
+}
+
+div ul
+{
+    height : 100%;
+}
+
+/*主体居中*/
+#main
+{
+    width         : 100%;
+    height        : 65%;
+    margin        : 20% auto;
+    background-color    : #F9243F;
+    color         : #FFFFFF;
+    border-radius : 5px;
+}
+
+/*日历头部*/
+.calendarHeading
+{
+    text-align     : center;
+    border-bottom  : 1px solid rgba(255, 255, 255, .2);
+    font-size      : 2.5em;
+    font-weight    : 300;
+    letter-spacing : 0.025em;
+    height         : 10%;
+    padding-top: 3%;
+}
+
+/*日历主体*/
+.calendarContent
+{
+    height  : 88%;
+    padding : 1%;
+}
+
+/*calendar*/
+.calendar
+{
+    height : 100%;
+}
+
+/*显示具体日期*/
+.dateDay, .dateMonth, .dateYear
+{
+    margin : 0 auto;
+    height : 100%;
+    display: block;
+}
+
+/*切换年月日的样式*/
+#dateBar
+{
+    height: 11%;
+}
+.toLeft, .toRight
+{
+    padding-top : 1%;
+    display     : inline-block;
+    height      : 50%;
+    width       : 15%;
+    text-align  : center;
+    font-size: 2em;
+    color: transparent;
+}
+.toLeft
+{
+    background: url("../images/toleft.fw.png") center no-repeat;
+}
+.toRight
+{
+    background: url("../images/toright.fw.png") center no-repeat;
+}
+
+#dateBarText
+{
+    padding-top : 3%;
+    display     : inline-block;
+    height      : 60%;
+    width       : 68%;
+    text-align  : center;
+    font-size: 2em;
+}
+
+.toLeft:hover, .toRight:hover, #dateBarText:hover
+{
+    background-color : #CD2626;
+    border-radius    : 5px;
+}
+
+/*day li 样式*/
+.ulLi li
+{
+    float            : left;
+    width            : 14%;
+    height           : 87.5%;
+    text-align       : center;
+    background-color : transparent;
+}
+
+/*星期几*/
+#weekday li
+{
+    font-size : 1.8em;
+}
+
+.week
+{
+    padding-top: 1%;
+    height : 8%;
+}
+
+
+/*具体日期*/
+.dayOne li, .dayTwo li, .dayThree li, .dayFour li, .dayFive li, .daySix li
+{
+    padding-top : 1.5%;
+    height      : 11%;
+}
+
+/*day li hover颜色变化*/
+.dayOne li:hover, .dayTwo li:hover,
+.dayThree li:hover, .dayFour li:hover,
+.dayFive li:hover, .daySix li:hover
+{
+    background-color : #CD2626;
+    border-radius    : 5px;
+}
+
+/*阳历*/
+.daySolar
+{
+    display     : block;
+    width       : 100%;
+    height      : 40%;
+    line-height : 100%;
+    text-align  : center;
+    font-weight : 600;
+    font-size   : 2em;
+}
+
+/*阴历*/
+.dayLunar
+{
+    padding-top : 10%;
+    margin      : 0 auto;
+    font-size   : 1.8em;
+}
+
+/*月份,年份界面*/
+#yearBar,#yearDecadeBar
+{
+    height: 15%;
+}
+
+#yearBarText,#yearDecadeBarText
+{
+
+    padding-top : 3%;
+    display     : inline-block;
+    height      : 60%;
+    width       : 68%;
+    text-align  : center;
+    font-size: 2em;
+}
+
+#yearBar span:hover,#yearDecadeBar span:hover
+{
+    background-color : #CD2626;
+    border-radius    : 5px;
+}
+
+.monthOne, .monthTwo, .monthThree,.yearOne,.yearTwo,.yearThree
+{
+    height     : 22%;
+    text-align : center;
+    font-size  : 3em;
+    padding: 2%;
+}
+
+/*month li 样式*/
+.monthUlLi li,.yearUlLi li
+{
+    float       : left;
+    width       : 25%;
+    height      : 18%
+    text-align  : center;
+    padding-top : 4%;
+}
+
+.monthUlLi li:hover,.yearUlLi li:hover
+{
+    background-color : #CD2626;
+    border-radius    : 5px;
+}
+

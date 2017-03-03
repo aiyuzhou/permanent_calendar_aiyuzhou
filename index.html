@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>万年历</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="center" id="main">
+    <div class="calendarHeading">万年历</div>
+    <div class="calendarContent">
+        <div class="calendar">
+            <div class="dateDay" id="dateDayContent" >
+                <div id="dateBar">
+                    <span onclick="showPrevMonth(this)" class="toLeft">左</span>
+                    <span onclick="showMonthView(this)" id="dateBarText"></span>
+                    <span onclick="showNextMonth(this)" class="toRight">右</span></div>
+                <div class="week clear">
+                    <ul class="weekBar ulLi" id="weekday">
+                        <li>日</li>
+                        <li>一</li>
+                        <li>二</li>
+                        <li>三</li>
+                        <li>四</li>
+                        <li>五</li>
+                        <li>六</li>
+                    </ul>
+                </div>
+                <div class="dayOne clear">
+                    <ul class="dayOneBar ulLi" id="oneUl">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+                <div class="dayTwo clear">
+                    <ul class="dayTwoBar ulLi">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+                <div class="dayThree clear">
+                    <ul class="dayThreeBar ulLi">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+                <div class="dayFour clear">
+                    <ul class="dayFourBar ulLi">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+                <div class="dayFive clear">
+                    <ul class="dayFiveBar ulLi">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+                <div class="daySix clear">
+                    <ul class="daySixBar ulLi">
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                        <li >
+                            <div class="daySolar">2</div>
+                            <div class="dayLunar"></div></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dateMonth" id="dateMonthContent" style="display: none;">
+                <div id="yearBar">
+                    <span onclick="showPrevYear()" class="toLeft">左</span>
+                    <span onclick="showYearView()" id="yearBarText"></span>
+                    <span onclick="showNextYear()" class="toRight">右</span>
+                </div>
+                <div class="monthOne monthUlLi">
+                    <ul>
+                        <li >1</li>
+                        <li >2</li>
+                        <li >3</li>
+                        <li >4</li>
+                    </ul>
+                </div>
+                <div class="monthTwo monthUlLi">
+                    <ul>
+                        <li>5</li>
+                        <li >6</li>
+                        <li >7</li>
+                        <li >8</li>
+                    </ul>
+                </div>
+                <div class="monthThree monthUlLi">
+                    <ul>
+                        <li >9</li>
+                        <li >10</li>
+                        <li >11</li>
+                        <li >12</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dateYear" id="dateYearContent" style="display: none;">
+                <div id="yearDecadeBar">
+                    <span onclick="showPrevDecadeYear()" class="toLeft">左</span>
+                    <span id="yearDecadeBarText"></span>
+                    <span onclick="showNextDecadeYear()" class="toRight">右</span>
+                </div>
+                <div class="yearOne yearUlLi">
+                    <ul>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                    </ul>
+                </div>
+                <div class="yearTwo yearUlLi">
+                    <ul>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                    </ul>
+                </div>
+                <div class="yearThree yearUlLi">
+                    <ul>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                        <li ></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/date.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/lunarData.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    var today = new Date();
+    showTheDayView(today);
+    var width=screen.width;
+    if(width<=414)
+    {
+        document.write('<link rel="stylesheet" type="text/css" href="css/forPhone.css"/>');
+    }
+    else if (width <= 768)
+    {
+        document.write('<link rel="stylesheet" type="text/css" href="css/forPad.css"/>');
+    }
+    else
+    {
+        document.write(' <link href="css/main.css" rel="stylesheet" type="text/css">');
+    }
+</script>
+</body>
+</html>
